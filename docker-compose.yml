@@ -1,5 +1,14 @@
 version: '3.8'
 services:
+  mysql-test:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=fj
+    volumes:
+      - ./mysql-test:/var/lib/mysql
+    ports:
+      - '3306:3306'
+      - '33060:33060'
   redis-test:
     image: redis
     volumes:
